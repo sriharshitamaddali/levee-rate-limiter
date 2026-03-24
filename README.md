@@ -255,12 +255,11 @@ Levee uses two namespaced Redis entries per entity:
 
 #### Fixed Window Demo
 
-https://github.com/user-attachments/assets/0c805c35-c409-4652-81eb-966e6c5c089f
+https://github.com/user-attachments/assets/0f5b9fa2-3ff3-49c2-9845-b3e4f4b16a55
 
 #### Token Bucket Demo
 
-https://github.com/user-attachments/assets/6e39e184-838d-44ac-92a3-a9b3c8776b81
-
+https://github.com/user-attachments/assets/0e5826fa-66e1-4493-b7b0-06d5e07a0fd0
 ___
 
 ## Project Structure
