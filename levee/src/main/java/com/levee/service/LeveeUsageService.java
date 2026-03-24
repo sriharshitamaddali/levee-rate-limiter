@@ -18,8 +18,7 @@ import static com.levee.constants.LeveeConstants.DEFAULT_USAGE_TTL;
 @Service
 @RequiredArgsConstructor
 public class LeveeUsageService {
-    @Autowired
-    private LeveeUsageRepository leveeUsageRepository;
+    private final LeveeUsageRepository leveeUsageRepository;
 
     public LeveeUsage save(LeveeUsage usageRequest) {
         LeveeUsage savedUsageRecord = leveeUsageRepository.save(usageRequest);

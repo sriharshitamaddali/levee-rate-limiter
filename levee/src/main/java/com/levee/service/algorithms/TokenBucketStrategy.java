@@ -8,6 +8,7 @@ import com.levee.model.LeveeConfig;
 import com.levee.model.LeveeUsage;
 import com.levee.service.LeveeUsageService;
 import com.levee.service.LeveeUtils;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +18,11 @@ import java.util.Objects;
 import static com.levee.constants.LeveeConstants.DEFAULT_USAGE_TTL;
 
 @Component
+@RequiredArgsConstructor
 public class TokenBucketStrategy implements RateLimitStrategy{
-    @Autowired
-    private LeveeUsageService leveeUsageService;
+    private final LeveeUsageService leveeUsageService;
 
-    @Autowired
-    private LeveeUtils leveeUtils;
+    private final LeveeUtils leveeUtils;
 
     @Override
     public AlgorithmType getAlgorithmType() {

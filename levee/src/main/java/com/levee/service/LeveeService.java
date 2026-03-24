@@ -27,14 +27,11 @@ import static com.levee.constants.LeveeConstants.DEFAULT_WINDOW_SIZE;
 public class LeveeService {
     private static final Logger logger = LoggerFactory.getLogger(LeveeService.class);
 
-    @Autowired
-    private LeveeConfigRepository leveeConfigRepository;
+    private final LeveeConfigRepository leveeConfigRepository;
 
-    @Autowired
-    private LeveeUtils leveeUtils;
+    private final LeveeUtils leveeUtils;
 
-    @Autowired
-    private StrategyFactory leveeFactory;
+    private final StrategyFactory leveeFactory;
 
     public LeveeInitResponse createConfig(
             LeveeInitRequest request
