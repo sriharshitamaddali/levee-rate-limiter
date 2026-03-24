@@ -51,7 +51,7 @@ Levee implements rate limiting using the **Strategy design pattern** — algorit
 
 | Component | Technology |
 |---|---|
-| Language | Java 21 |
+| Language | Java 25 |
 | Framework | Spring Boot 4 |
 | Data Store | Redis (dev: Redis Cloud, prod: AWS ElastiCache) |
 | API Docs | SpringDoc OpenAPI 3 + Swagger UI |
@@ -64,7 +64,7 @@ Levee implements rate limiting using the **Strategy design pattern** — algorit
 
 ### Prerequisites
 
-- Java 21
+- Java 25
 - Maven
 - Redis instance (local or Redis Cloud free tier)
 
