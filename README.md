@@ -251,6 +251,17 @@ Levee uses two namespaced Redis entries per entity:
 - **Limit updates** — `/update` endpoint to change `fixedSize` without reinitialising
 
 ---
+## Demo
+
+#### Fixed Window Demo
+
+https://github.com/user-attachments/assets/0c805c35-c409-4652-81eb-966e6c5c089f
+
+#### Token Bucket Demo
+
+https://github.com/user-attachments/assets/6e39e184-838d-44ac-92a3-a9b3c8776b81
+
+___
 
 ## Project Structure
 
