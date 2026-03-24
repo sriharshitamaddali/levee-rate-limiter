@@ -11,7 +11,4 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class LeveeUsageResponse implements Serializable {
     private boolean allowed;
-    private long remaining;
-    private String resetAt;
-    private String reason;
 }

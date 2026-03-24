@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
-import static com.levee.constants.LeveeConstants.DEFAULT_CONFIG_TTL;
+import static com.levee.constants.LeveeConstants.*;
 
 @Data
 @NoArgsConstructor
@@ -17,5 +17,6 @@ public class LeveeConfig {
     @Id
     private String key;
     private AlgorithmType algorithmType;  // enum: FIXED_WINDOW | SLIDING_WINDOW | TOKEN_BUCKET | LEAKY_BUCKET
-    private long fixedSize;                // maximum limit
+    private long fixedSize = DEFAULT_WINDOW_SIZE;                // maximum limit
+    private long refillRate = DEFAULT_REFILL_RATE; //refilling at 125 tokens/hour supporting 8 hour working day
 }

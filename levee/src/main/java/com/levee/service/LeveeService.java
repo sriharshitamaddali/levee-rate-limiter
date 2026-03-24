@@ -19,6 +19,9 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Optional;
 
+import static com.levee.constants.LeveeConstants.DEFAULT_REFILL_RATE;
+import static com.levee.constants.LeveeConstants.DEFAULT_WINDOW_SIZE;
+
 @RequiredArgsConstructor
 @Service
 public class LeveeService {
@@ -44,7 +47,8 @@ public class LeveeService {
             config = new LeveeConfig(
                     key,
                     Optional.ofNullable(request.getAlgorithmType()).orElse(AlgorithmType.FIXED_WINDOW),
-                    request.getFixedSize()
+                    Optional.ofNullable(request.getFixedSize()).orElse(DEFAULT_WINDOW_SIZE),
+                    Optional.ofNullable(request.getRefillRate()).orElse(DEFAULT_REFILL_RATE)
             );
 
             config = leveeConfigRepository.save(config);
@@ -65,8 +69,7 @@ public class LeveeService {
             throw new NoSuchElementException("Levee config not found");
         }
         AlgorithmType algorithmType = isConfig.get().getAlgorithmType();
-        long fixedSize = isConfig.get().getFixedSize();
         RateLimitStrategy algorithm = leveeFactory.getStrategy(algorithmType);
-        return algorithm.evaluate(request, fixedSize);
+        return algorithm.evaluate(request, isConfig.get());
     }
 }
